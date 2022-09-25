@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: space-between;
+        }
+        button{
+            padding: 30px 60px;
+            background-color: yellow;
+            color: black;
+            display: block;
+            margin-top: 5%;
+            border-radius: 10px;
+            box-shadow: 0 10px 8px -6px rgba( 0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="button" onclick="inlineEvent()">
+            click me
+        </button>
+        <button id="button2">
+            click me
+        </button>
+        <button id="button3">
+            click me
+        </button>
+        <button id="button4">
+            click me
+        </button>
+    </div>
+    <script>
+        const inlineEvent = () =>{
+            alert("Inline Event Work Succesfully!");
+        } 
+    
+        const secondWay = document.getElementById('button2');
+
+        secondWay.onclick = function (){
+            alert("Executing function without inline calling");
+        }
+
+        const fourthWay = document.querySelector('#button3');
+
+        //1 way
+        fourthWay.addEventListener('click', ()=>{
+            alert("4th way of executing function without inline calling");
+        })
+
+        //2 way
+
+        const fourthWay2 = document.querySelector('#button4');
+
+        const callingFun = () =>{
+            alert("Alternative of 4th way of executing function without inline calling");
+        }
+
+        fourthWay2.addEventListener('click', callingFun);
+
+
+    </script>
+</body>
+</html>
